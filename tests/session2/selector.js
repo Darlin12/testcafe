@@ -2,6 +2,7 @@ import { Selector } from "testcafe";
 
 fixture('Primer test')
     .page('https://www.google.com/')
+    
 
 test('My first test', async t => {
         const searchBar = Selector('.gLFyf'); //Searchbar en google
@@ -9,6 +10,7 @@ test('My first test', async t => {
         const searchBarAmazon = Selector('#twotabsearchtextbox'); //Searchbar en amazon
 
         await t
+        .maximizeWindow()
         .click(searchBar)
         .typeText(searchBar, 'Amazon')
         .wait(3000)
